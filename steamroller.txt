@@ -1,0 +1,11 @@
+function steamrollArray(arr, flat = []) {
+  arr.forEach(item => {
+    if (Array.isArray(item)) {
+      steamrollArray(item,flat)
+    } else flat.push(item)
+    
+  })
+  return flat;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
